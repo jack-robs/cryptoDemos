@@ -1,8 +1,10 @@
 # Caesar Cipher Project
 
-- this is a demo of a caesar cipher, pretty simple cipher but using the simple enryption/decryption to work with OOD approaches, especially in pyhton, and see if I can figure out frequency analysis decryption (programmatically and from UX perspective) 
+- this is a demo of a caesar cipher, pretty simple cipher but using the simple enryption/decryption to work with OOD approaches, especially in python, and see if I can figure out frequency analysis decryption (programmatically and from UX perspective) 
 
-## Design Approach
+- Also, putting some focus in to building OO-focused testing suite, see test_CaesarCipher.p
+
+## Design Approach TODO sync this given some more building work
 - Class `CaesarCipher`
     - an instance of caesar cipher use
     - instantiation:
@@ -10,7 +12,7 @@
             - TODO make message class
         - key: int `key` 
             - TODO: DHM exchange? that would be neat
-    - encrypt using `instance.decrypt()`
+    - encrypt using `instance.encrypt()`
         - TODO: strategy pattern, other encryption strats?
     - decrypt using `instance.decrypt()`
         - TODO: sort out key storage? I gueess if `null` in `key` then 
