@@ -1,4 +1,5 @@
 # caeser encoder
+# DEPRECATED, MOVING TO OOD approach, see cipherMain and CeasarCipher
 
 import re
 
