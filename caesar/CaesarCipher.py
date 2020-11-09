@@ -52,6 +52,40 @@ class CaesarCipher:
         self.cipherText = ''.join(workingCT)
         return self.cipherText
 
+    def decrypt():
+        '''
+        frequency analysis
+        '''
+
+
+
+
+    def mergeSort(cipherText):
+        '''
+        merge sort helper function
+        cipherText str
+        '''
+
+        # aux array - todo idk if making a list vs. array affects Big O sort time? 
+        aux = []
+        cipherLst = cipherText.split()
+
+        sort(cipherText, 0, len(cipherLst) - 1)
+
+        # sorted, use for frequeny analysis in decrypt
+        return cipherLst
+
+    
+
+    def sort(toSort, lo, hi):
+        '''
+        merge sort helper
+        '''
+
+
+
+
+
 
     '''
     getters setters

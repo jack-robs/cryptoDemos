@@ -79,6 +79,16 @@ def main():
     caesarInstance.encrypt()
     testClient.testEncrypt(exp_ct, caesarInstance.cipherText, 2)
 
+    '''
+    instance 1, CC()
+    '''
+    exp_msg1 = "hello there zoo friend"
+    exp_key1 = 4
+    exp_ct1 = 'lipps xlivi dss jvmirh'
+    caesartTest1 = CaesarCipher(exp_msg1, exp_key1)
+    caesartTest1.encrypt()
+    testClient.testEncrypt(exp_ct1, caesartTest1.cipherText, 3)
+
 
 
 
