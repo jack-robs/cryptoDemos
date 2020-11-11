@@ -53,6 +53,27 @@ class TestCC:
             self.failed_tests.append(testResult)
             print("failed testEncrypt()", testNum)
 
+    # mergeSort() and related helper fxns
+    def testMSort(self, exp_sorted, act_sorted, testNum):
+        
+        #list compares
+        sorted = True
+        for i in range(len(exp_sorted)):
+            if exp_sorted[i] == act_sorted[i]:
+                continue
+            else:
+                sorted = False
+                break
+        
+        if sorted == True:
+            testResult = "testMSort()" + str(testNum)
+            self.passed_tests.append(testResult)
+            self.total_tests =+ 1
+            print("passed testMSort()", testNum)
+        else:
+            testResult = "testMSort()" + str(testNum)
+            self.failed_tests.append(testResult)
+            print("failed testMsort()", testNum)
 
 def main():
 
@@ -89,8 +110,9 @@ def main():
     caesartTest1.encrypt()
     testClient.testEncrypt(exp_ct1, caesartTest1.cipherText, 3)
 
-
-
+    # test mergesort, using exp_ct1
+    exp_sorted1 = ['d', 'h', 'i', 'i', 'i', 'i', 'j', 'l', 'l', 'm', 'p', 'p', 'r', 's', 's', 'v', 'v', 'x']
+    testClient.testEncrypt(exp_sorted1, caesartTest1.mergeSort(exp_ct1), 4)
 
     print("Failed", len(testClient.failed_tests))
     print("Passed", len(testClient.passed_tests))

@@ -52,40 +52,78 @@ class CaesarCipher:
         self.cipherText = ''.join(workingCT)
         return self.cipherText
 
-    def decrypt():
+    def decrypt(self):
         '''
         frequency analysis
+        idea:
+            - to do frequency anaylsis, need to count occurnce of each
+            letter in the cipher text
+            - it's probably easier to count if it's sorted prior to
+            counting each individual letter in the cipher
+            - so, cipherText -> cipherTextList -> sort cipherTextList
+            - count CipherTextListSorted occurnece of each letter
+            - go from there
         '''
 
 
-
-
-    def mergeSort(cipherText):
+    def mergeSort(self, cipherText):
         '''
         merge sort helper function
         cipherText str
         '''
 
-        # aux array - todo idk if making a list vs. array affects Big O sort time? 
-        aux = []
-        cipherLst = cipherText.split()
+        # split cipher string into list of individual chars
+        cipherList = list(cipherText)
 
-        sort(cipherText, 0, len(cipherLst) - 1)
+        # list to sort, lo ,hi
+        self.sort(cipherList, 0, len(cipherList)-1,)
 
         # sorted, use for frequeny analysis in decrypt
-        return cipherLst
+        return cipherList
 
-    
-
-    def sort(toSort, lo, hi):
+    def sort(self, toSort, lo, hi):
         '''
         merge sort helper
         '''
+        if hi <= lo:
+            return
 
+        # se new mid
+        mid = lo + (hi - lo) / 2
+        self.sort(toSort, lo, mid)
+        self.sort(toSort, mid + 1, hi)
+        self.merge(toSort, lo, mid, hi)
 
+    def merge(self, toSort, lo, mid, hi):
 
+        # make aux array
+        aux = []
+        
+        # set index trackers
+        i = lo
+        j = mid + 1
 
-
+        #copy into aux array
+        k = lo
+        while k <= hi:
+            aux[k] = toSort[k]
+            k += 1
+        
+        # merge back into toSort
+        k = lo
+        while k <= hi:
+            if i > mid: 
+                toSort[k] = aux[j]
+                j += 1
+            elif j > hi:
+                toSort[k] = aux[i]
+                i += 1
+            elif aux[j] < aux[i]: 
+                toSort[k] = aux[j]
+                j += 1
+            else:
+                toSort[k] = aux[i]
+                i += 1
 
     '''
     getters setters
